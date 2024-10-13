@@ -13,52 +13,52 @@ var col4PressStart = 0;
 
 var video = document.getElementById("video")
 
-playVideo = function(){
+function playVideo(){
     document.getElementById("video").play()
     document.getElementById("play-button").classList.add("hidden");
 }
 
-col1StartBlock = function(){
+function col1StartBlock(){
     document.getElementById("col-1").classList.add("col-1-selected");
     col1PressStart = video.currentTime
 }
 
-col1EndBlock = function(){
+function col1EndBlock(){
     document.getElementById("col-1").classList.remove("col-1-selected");
     console.log(col1PressStart + " -> " + video.currentTime)
 }
 
-col2StartBlock = function(){
+function col2StartBlock(){
     document.getElementById("col-2").classList.add("col-2-selected");
     col2PressStart = video.currentTime
 }
 
-col2EndBlock = function(){
+function col2EndBlock(){
     document.getElementById("col-2").classList.remove("col-2-selected");
     console.log(col2PressStart + " -> " + video.currentTime)
 }
 
-col3StartBlock = function(){
+function col3StartBlock(){
     document.getElementById("col-3").classList.add("col-3-selected");
     col3PressStart = video.currentTime
 }
 
-col3EndBlock = function(){
+function col3EndBlock(){
     document.getElementById("col-3").classList.remove("col-3-selected");
     console.log(col3PressStart + " -> " + video.currentTime)
 }
 
-col4StartBlock = function(){
+function col4StartBlock(){
     document.getElementById("col-4").classList.add("col-4-selected");
     col4PressStart = video.currentTime
 }
 
-col4EndBlock = function(){
+function col4EndBlock(){
     document.getElementById("col-4").classList.remove("col-4-selected");
     console.log(col4PressStart + " -> " + video.currentTime)
 }
 
-startBlock = function(e){
+function startBlock(e){
     if(e.key === "a") {
         col1StartBlock()
     }
@@ -73,7 +73,7 @@ startBlock = function(e){
     }
 }
 
-endBlock = function(e){
+function endBlock(e){
     if(e.key === "a") {
         col1EndBlock()
     }
