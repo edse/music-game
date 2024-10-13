@@ -1,0 +1,1 @@
+{"mappings":"AAAA,SAAS,gBAAgB,CAAC,oBAAoB;IAC1C,aAAa;IACb,SAAS,cAAc,CAAC,SAAS,IAAI;AACzC","sources":["src/js/main.js"],"sourcesContent":["document.addEventListener(\"DOMContentLoaded\", function() {\n    // play video\n    document.getElementById(\"video\").play()\n});"],"names":[],"version":3,"file":"index.aa69868b.js.map","sourceRoot":"/__parcel_source_root/"}

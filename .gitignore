@@ -4,7 +4,6 @@
 .vscode/*
 !.vscode/extensions.json
 coverage/
-dist/
 lib/
 logs/
 node_modules/
