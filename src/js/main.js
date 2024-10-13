@@ -1,15 +1,15 @@
 
-levelMap = {
+var levelMap = {
     "col-1": [],
     "col-2": [],
     "col-3": [],
     "col-4": [],
 }
 
-col1PressStart = 0;
-col2PressStart = 0;
-col3PressStart = 0;
-col4PressStart = 0;
+var col1PressStart = 0;
+var col2PressStart = 0;
+var col3PressStart = 0;
+var col4PressStart = 0;
 
 playVideo = function(){
     document.getElementById("video").play()
