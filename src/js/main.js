@@ -1,4 +1,3 @@
-
 var levelMap = {
     "col-1": [],
     "col-2": [],
@@ -11,11 +10,23 @@ var col2PressStart = 0;
 var col3PressStart = 0;
 var col4PressStart = 0;
 
-var video = document.getElementById("video")
+var video = document.getElementById("video");
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+
+function gameLoop(){
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    context.drawImage(video, 0, 0);
+    if(!video.ended && !video.paused) {
+        requestAnimationFrame(gameLoop);
+    }
+}
 
 function playVideo(){
     document.getElementById("video").play()
     document.getElementById("play-button").classList.add("hidden");
+    requestAnimationFrame(gameLoop);
 }
 
 function col1StartBlock(){
@@ -89,6 +100,10 @@ function endBlock(e){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    var video = document.getElementById("video");
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
     // key press
     document.addEventListener("keydown", startBlock);
     document.addEventListener("keyup", endBlock);
