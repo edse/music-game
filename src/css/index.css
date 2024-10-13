@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+}
+
+#video {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+}
+
+#play-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+#col-1 {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 100vh;
+    width: 25vw;
+    z-index: 2;
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+.col-1-selected {
+    background-color: rgba(0, 0, 255, 1) !important;
+}
+
+#col-2 {
+    position: absolute;
+    left: 25vw;
+    top: 0%;
+    height: 100vh;
+    width: 25vw;
+    z-index: 2;
+    background-color: rgba(255, 0, 255, 0.5);
+}
+
+.col-2-selected {
+    background-color: rgba(255, 0, 255, 1) !important;
+}
+
+#col-3 {
+    position: absolute;
+    left: 50vw;
+    top: 0%;
+    height: 100vh;
+    width: 25vw;
+    z-index: 2;
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.col-3-selected {
+    background-color: rgba(255, 255, 0, 1) !important;
+}
+
+#col-4 {
+    position: absolute;
+    left: 75vw;
+    top: 0%;
+    height: 100vh;
+    width: 25vw;
+    z-index: 2;
+    background-color: rgba(0, 128, 0, 0.5);
+}
+
+.col-4-selected {
+    background-color: rgba(0, 128, 0, 1) !important;
+}
+
+#line {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    height: 5px;
+    width: 100vw;
+    z-index: 2;
+    background-color: red;
+}
+

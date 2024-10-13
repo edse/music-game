@@ -1,0 +1,20 @@
+{
+  "name": "music-game",
+  "version": "1.0.0",
+  "description": "Stella's Music Game",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "parcel": "^2.12.0",
+    "postcss": "^8.4.47",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "^2.0.1",
+    "tailwindcss": "^3.4.13"
+  }
+}
