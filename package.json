@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Stella's Music Game",
   "scripts": {
-    "dev": "parcel src/index.html --public-url /music-game --dist-dir docs",
+    "dev": "parcel src/index.html --public-url /music-game",
     "build": "parcel build src/index.html --public-url /music-game --dist-dir docs"
   },
   "keywords": [],
