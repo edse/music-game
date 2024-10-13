@@ -14,7 +14,7 @@ var col4PressStart = 0;
 var video = document.getElementById("video")
 
 playVideo = function(){
-    video.play()
+    document.getElementById("video").play()
     document.getElementById("play-button").classList.add("hidden");
 }
 
@@ -88,19 +88,21 @@ endBlock = function(e){
     }
 }
 
-// key press
-document.addEventListener("keydown", startBlock);
-document.addEventListener("keyup", endBlock);
+document.addEventListener("DOMContentLoaded", function() {
+    // key press
+    document.addEventListener("keydown", startBlock);
+    document.addEventListener("keyup", endBlock);
 
-// touch
-document.getElementById("col-1").addEventListener("touchstart", col1StartBlock);
-document.getElementById("col-1").addEventListener("touchend", col1EndBlock);
-document.getElementById("col-2").addEventListener("touchstart", col2StartBlock);
-document.getElementById("col-2").addEventListener("touchend", col2EndBlock);
-document.getElementById("col-3").addEventListener("touchstart", col3StartBlock);
-document.getElementById("col-3").addEventListener("touchend", col3EndBlock);
-document.getElementById("col-4").addEventListener("touchstart", col4StartBlock);
-document.getElementById("col-4").addEventListener("touchend", col4EndBlock);
+    // touch
+    document.getElementById("col-1").addEventListener("touchstart", col1StartBlock);
+    document.getElementById("col-1").addEventListener("touchend", col1EndBlock);
+    document.getElementById("col-2").addEventListener("touchstart", col2StartBlock);
+    document.getElementById("col-2").addEventListener("touchend", col2EndBlock);
+    document.getElementById("col-3").addEventListener("touchstart", col3StartBlock);
+    document.getElementById("col-3").addEventListener("touchend", col3EndBlock);
+    document.getElementById("col-4").addEventListener("touchstart", col4StartBlock);
+    document.getElementById("col-4").addEventListener("touchend", col4EndBlock);
 
-// click
-document.getElementById("play-button").addEventListener("click", playVideo);
+    // click
+    document.getElementById("play-button").addEventListener("click", playVideo);
+});
