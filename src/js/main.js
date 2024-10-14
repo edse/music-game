@@ -5,19 +5,56 @@ var levelMap = {
     "col-4": [],
 }
 
-var col1PressStart = 0;
-var col2PressStart = 0;
-var col3PressStart = 0;
-var col4PressStart = 0;
+var col1PressStartTime = 0;
+var col2PressStartTime = 0;
+var col3PressStartTime = 0;
+var col4PressStartTime = 0;
+
+var col1PressStartPosition = 0;
+var col2PressStartPosition = 0;
+var col3PressStartPosition = 0;
+var col4PressStartPosition = 0;
+
+var col1Block = null;
+var col2Block = null;
+var col3Block = null;
+var col4Block = null;
+
+var secondsPassed;
+var oldTimeStamp;
+var fps;
+
+var step = 7
+var currentPosition = 0
+var blockInitialHeight = 0
 
 var video = document.getElementById("video");
-var canvas = document.getElementById("canvas");
-var context = canvas.getContext("2d");
 
-function gameLoop(){
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    context.drawImage(video, 0, 0);
+function init() {
+    video = document.getElementById("video");
+    var e = document.querySelectorAll(".block-col-1")[0];
+    var c = window.getComputedStyle(e);
+    blockInitialHeight = Math.round(String(c.height).replace("px", ""));
+    // var canvas = document.getElementById("canvas");
+    // var context = canvas.getContext("2d");
+}
+
+function showFps(timestamp) {
+    secondsPassed = (timestamp - oldTimeStamp) / 1000;
+    oldTimeStamp = timestamp;
+    fps = Math.round(1 / secondsPassed);
+    document.getElementById("fps").innerText = fps + " fps"
+}
+
+function gameLoop(timestamp){
+    showFps(timestamp);
+
+    currentPosition = currentPosition + step;
+    document.getElementById("map").style.transform = "translateY(" + currentPosition  + "px)";
+    // document.getElementById("map").style.top = document.getElementById("map").offsetTop + step + "px"
+
+    resizeBlocks();
+
     if(!video.ended && !video.paused) {
         requestAnimationFrame(gameLoop);
     }
@@ -29,58 +66,132 @@ function playVideo(){
     requestAnimationFrame(gameLoop);
 }
 
+function pauseVideo(){
+    document.getElementById("video").pause();
+}
+
+function createBlock(col){
+    var block = document.createElement('div');
+    block.classList.add("block");
+    block.classList.add(`block-col-${col}`);
+    block.style.bottom = Math.round(currentPosition - (screen.height / 2)) + "px"
+    document.getElementById("map").appendChild(block);
+
+    switch (col) {
+        case 1:
+            col1Block = block;
+            break;
+        case 2:
+            col2Block = block;
+            break;
+        case 3:
+            col3Block = block;
+            break;
+        case 4:
+            col4Block = block;
+            break;
+    }
+}
+
+function resizeBlocks(){
+    if(col1PressStartPosition !== 0 && col1Block) {
+        if(typeof(col1Block) === "object") {
+            var h = Math.round(currentPosition - col1PressStartPosition) + blockInitialHeight;
+            col1Block.style.height = h + "px";
+        }
+    }
+    if(col2PressStartPosition !== 0 && col2Block) {
+        if(typeof(col2Block) === "object") {
+            var h = Math.round(currentPosition - col2PressStartPosition) + blockInitialHeight;
+            col2Block.style.height = h + "px";
+        }
+    }
+    if(col3PressStartPosition !== 0 && col3Block) {
+        if(typeof(col3Block) === "object") {
+            var h = Math.round(currentPosition - col3PressStartPosition) + blockInitialHeight;
+            col3Block.style.height = h + "px";
+        }
+    }
+    if(col4PressStartPosition !== 0 && col4Block) {
+        if(typeof(col4Block) === "object") {
+            var h = Math.round(currentPosition - col4PressStartPosition) + blockInitialHeight;
+            col4Block.style.height = h + "px";
+        }
+    }
+}
+
 function col1StartBlock(){
     document.getElementById("col-1").classList.add("col-1-selected");
-    col1PressStart = video.currentTime
+    col1PressStartTime = video.currentTime;
+    col1PressStartPosition = currentPosition;
+    createBlock(1);
 }
 
 function col1EndBlock(){
     document.getElementById("col-1").classList.remove("col-1-selected");
-    console.log(col1PressStart + " -> " + video.currentTime)
+    console.log(col1PressStartTime + " -> " + video.currentTime)
+    col1PressStartPosition = 0
 }
 
 function col2StartBlock(){
     document.getElementById("col-2").classList.add("col-2-selected");
-    col2PressStart = video.currentTime
+    col2PressStartTime = video.currentTime
+    col2PressStartPosition = currentPosition
+    createBlock(2);
 }
 
 function col2EndBlock(){
     document.getElementById("col-2").classList.remove("col-2-selected");
-    console.log(col2PressStart + " -> " + video.currentTime)
+    console.log(col2PressStartTime + " -> " + video.currentTime)
+    col2PressStartPosition = 0
 }
 
 function col3StartBlock(){
     document.getElementById("col-3").classList.add("col-3-selected");
-    col3PressStart = video.currentTime
+    col3PressStartTime = video.currentTime
+    col3PressStartPosition = currentPosition
+    createBlock(3);
 }
 
 function col3EndBlock(){
     document.getElementById("col-3").classList.remove("col-3-selected");
-    console.log(col3PressStart + " -> " + video.currentTime)
+    console.log(col3PressStartTime + " -> " + video.currentTime)
+    col3PressStartPosition = 0
 }
 
 function col4StartBlock(){
     document.getElementById("col-4").classList.add("col-4-selected");
-    col4PressStart = video.currentTime
+    col4PressStartTime = video.currentTime
+    col4PressStartPosition = currentPosition
+    createBlock(4);
 }
 
 function col4EndBlock(){
     document.getElementById("col-4").classList.remove("col-4-selected");
-    console.log(col4PressStart + " -> " + video.currentTime)
+    console.log(col4PressStartTime + " -> " + video.currentTime)
+    col4PressStartPosition = 0
 }
 
 function startBlock(e){
-    if(e.key === "a") {
-        col1StartBlock()
+    if(e.repeat) {
+        return;
     }
-    if(e.key === "s") {
-        col2StartBlock()
-    }
-    if(e.key === "d") {
-        col3StartBlock()
-    }
-    if(e.key === "f") {
-        col4StartBlock()
+    switch (e.key) {
+        case "a":
+            col1StartBlock();
+            break;
+        case "s":
+            col2StartBlock();
+            break;
+        case "d":
+            col3StartBlock();
+            break;
+        case "f":
+            col4StartBlock();
+            break;
+        case " ":
+            pauseVideo();
+            break;
     }
 }
 
@@ -100,9 +211,7 @@ function endBlock(e){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    var video = document.getElementById("video");
-    var canvas = document.getElementById("canvas");
-    var context = canvas.getContext("2d");
+    init();
 
     // key press
     document.addEventListener("keydown", startBlock);
