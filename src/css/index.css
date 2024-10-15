@@ -95,10 +95,13 @@
     height: 20vh;
     width: 15vw;
     z-index: 4;
-    border-radius: 100%;
+    /* border-radius: 100%; */
     border: 5px dashed white;
     background-color:rgba(0, 0, 0, 0.2);
     padding: 5%;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 
 .block-col-1 {

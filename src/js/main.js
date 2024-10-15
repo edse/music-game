@@ -176,7 +176,7 @@ function startBlock(e){
     if(e.repeat) {
         return;
     }
-    switch (e.key) {
+    switch (e.key.toLowerCase()) {
         case "a":
             col1StartBlock();
             break;
