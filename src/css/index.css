@@ -18,7 +18,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 11;
 }
 
 .col {
@@ -26,7 +26,7 @@
     top: 0%;
     height: 100vh;
     width: 25vw;
-    z-index: 2;
+    z-index: 10;
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
@@ -34,38 +34,37 @@
 
 #col-1 {
     left: 0%;
-    background-color: rgba(0, 0, 255, 0.5);
+    border-right: solid 0.2vw;
 }
 
 .col-1-selected {
-    background-color: rgba(0, 0, 255, 1) !important;
+    background-color: rgba(0, 0, 255, 0.5) !important;
 }
 
 #col-2 {
     left: 25vw;
-    background-color: rgba(255, 0, 255, 0.5);
+    border-right: solid 0.2vw;
 }
 
 .col-2-selected {
-    background-color: rgba(255, 0, 255, 1) !important;
+    background-color: rgba(255, 0, 255, 0.5) !important;
 }
 
 #col-3 {
     left: 50vw;
-    background-color: rgba(255, 255, 0, 0.5);
+    border-right: solid 0.2vw;
 }
 
 .col-3-selected {
-    background-color: rgba(255, 255, 0, 1) !important;
+    background-color: rgba(255, 255, 0, 0.5) !important;
 }
 
 #col-4 {
     left: 75vw;
-    background-color: rgba(0, 128, 0, 0.5);
 }
 
 .col-4-selected {
-    background-color: rgba(0, 128, 0, 1) !important;
+    background-color: rgba(0, 128, 0, 0.5) !important;
 }
 
 #line {
@@ -73,7 +72,7 @@
     left: 0%;
     top: 50%;
     transform: translate(0%, -50%);
-    height: 3px;
+    height: 0.2vw;
     width: 100vw;
     z-index: 3;
     background-color: red;
@@ -86,8 +85,9 @@
     top: 5vh;
     height: 0.5vw;
     width: 96vw;
-    z-index: 3;
+    z-index: 11;
     background-color: rgb(255, 255, 255);
+    border: black solid 0.05vw;
 }
 
 #playhead {
@@ -154,4 +154,5 @@
 #vwvh {
     width: 1vw;
     height: 1vw;
+    position: absolute;
 }
