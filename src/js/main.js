@@ -53,7 +53,7 @@ function init() {
     var c = window.getComputedStyle(document.querySelectorAll("#line")[0]);
     middleOfScreen = Math.round(String(c.top).replace("px", ""));
 
-    offset = recordedmiddleOfScreen - middleOfScreen;
+    var offset = recordedmiddleOfScreen - middleOfScreen;
     currentPosition = currentPosition - offset;
     recordedmiddleOfScreen = middleOfScreen;
 
