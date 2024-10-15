@@ -104,7 +104,7 @@ function createBlock(col) {
     let block = document.createElement('div');
     block.classList.add("block");
     block.classList.add("player-block");
-    block.classList.add(`block-col-${col}`);  
+    block.classList.add(`block-col-${col}`);
     block.style.bottom = Math.round(currentPosition - middleOfScreen - (blockInitialHeight / 2)) + "px"
     document.getElementById("map").appendChild(block);
 
@@ -245,7 +245,7 @@ function endBlock(e) {
     }
 }
 
-window.onload = function() {
+window.onload = function () {
     init();
 
     // key press
@@ -268,4 +268,18 @@ window.onload = function() {
     // resize
     window.addEventListener('resize', init, false);
     window.addEventListener('orientationchange', init, false);
+
+    // Zooming
+    document.addEventListener("gesturestart", function (e) {
+        e.preventDefault();
+        document.body.style.zoom = 0.99;
+    });
+    document.addEventListener("gesturechange", function (e) {
+        e.preventDefault();
+        document.body.style.zoom = 0.99;
+    });
+    document.addEventListener("gestureend", function (e) {
+        e.preventDefault();
+        document.body.style.zoom = 1;
+    });
 }
