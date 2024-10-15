@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="author" content="Stella Estrella">
     <link rel="icon" type="image/png" href="./images/favicon.png">
     <link href="./css/index.css" type="text/css" rel="stylesheet">
@@ -13,6 +13,8 @@
 
 <body class="h-full overflow-hidden">
 
+    <div id="vwvh"></div>
+
     <div id="col-1" class="col"></div>
     <div id="col-2" class="col"></div>
     <div id="col-3" class="col"></div>
@@ -20,18 +22,180 @@
 
     <div id="line"></div>
 
-    <div id="map">
+    <div id="timeline">
+        <div id="playhead"></div>
+    </div>
+
+    <!-- <div id="map">
         <div class="block block-col-1"></div>
         <div class="block block-col-2"></div>
         <div class="block block-col-3"></div>
         <div class="block block-col-4"></div>
+    </div> -->
+
+    <div id="map">
+        <div class="block block-col-1" style="bottom: 177px; height: 479px;"></div>
+        <div class="block block-col-2" style="bottom: 842px; height: 472px;"></div>
+        <div class="block block-col-3" style="bottom: 1542px; height: 458px;"></div>
+        <div class="block block-col-1" style="bottom: 2207px; height: 227px;"></div>
+        <div class="block block-col-2" style="bottom: 2326px; height: 206px;"></div>
+        <div class="block block-col-3" style="bottom: 2396px; height: 206px;"></div>
+        <div class="block block-col-4" style="bottom: 2480px; height: 199px;"></div>
+        <div class="block block-col-4" style="bottom: 2879px; height: 423px;"></div>
+        <div class="block block-col-3" style="bottom: 3558px; height: 367px;"></div>
+        <div class="block block-col-2" style="bottom: 4202px; height: 409px;"></div>
+        <div class="block block-col-1" style="bottom: 4881px; height: 297px;"></div>
+        <div class="block block-col-4" style="bottom: 5133px; height: 290px;"></div>
+        <div class="block block-col-3" style="bottom: 5567px; height: 325px;"></div>
+        <div class="block block-col-2" style="bottom: 5567px; height: 304px;"></div>
+        <div class="block block-col-1" style="bottom: 5805px; height: 381px;"></div>
+        <div class="block block-col-4" style="bottom: 5812px; height: 360px;"></div>
+        <div class="block block-col-3" style="bottom: 6239px; height: 325px;"></div>
+        <div class="block block-col-2" style="bottom: 6239px; height: 318px;"></div>
+        <div class="block block-col-1" style="bottom: 6484px; height: 360px;"></div>
+        <div class="block block-col-4" style="bottom: 6491px; height: 332px;"></div>
+        <div class="block block-col-3" style="bottom: 6904px; height: 493px;"></div>
+        <div class="block block-col-2" style="bottom: 6904px; height: 493px;"></div>
+        <div class="block block-col-4" style="bottom: 7303px; height: 276px;"></div>
+        <div class="block block-col-3" style="bottom: 7464px; height: 220px;"></div>
+        <div class="block block-col-2" style="bottom: 7527px; height: 269px;"></div>
+        <div class="block block-col-1" style="bottom: 8283px; height: 724px;"></div>
+        <div class="block block-col-2" style="bottom: 8864px; height: 528px;"></div>
+        <div class="block block-col-3" style="bottom: 9613px; height: 444px;"></div>
+        <div class="block block-col-4" style="bottom: 9613px; height: 451px;"></div>
+        <div class="block block-col-1" style="bottom: 10299px; height: 241px;"></div>
+        <div class="block block-col-2" style="bottom: 10411px; height: 220px;"></div>
+        <div class="block block-col-3" style="bottom: 10488px; height: 213px;"></div>
+        <div class="block block-col-4" style="bottom: 10572px; height: 206px;"></div>
+        <div class="block block-col-4" style="bottom: 10978px; height: 192px;"></div>
+        <div class="block block-col-3" style="bottom: 11055px; height: 206px;"></div>
+        <div class="block block-col-2" style="bottom: 11146px; height: 199px;"></div>
+        <div class="block block-col-1" style="bottom: 11230px; height: 234px;"></div>
+        <div class="block block-col-1" style="bottom: 11650px; height: 206px;"></div>
+        <div class="block block-col-2" style="bottom: 11741px; height: 199px;"></div>
+        <div class="block block-col-3" style="bottom: 11832px; height: 199px;"></div>
+        <div class="block block-col-4" style="bottom: 11909px; height: 199px;"></div>
+        <div class="block block-col-4" style="bottom: 12322px; height: 185px;"></div>
+        <div class="block block-col-3" style="bottom: 12406px; height: 199px;"></div>
+        <div class="block block-col-2" style="bottom: 12504px; height: 199px;"></div>
+        <div class="block block-col-1" style="bottom: 12581px; height: 220px;"></div>
+        <div class="block block-col-1" style="bottom: 13001px; height: 220px;"></div>
+        <div class="block block-col-2" style="bottom: 13106px; height: 206px;"></div>
+        <div class="block block-col-3" style="bottom: 13190px; height: 213px;"></div>
+        <div class="block block-col-4" style="bottom: 13260px; height: 206px;"></div>
+        <div class="block block-col-2" style="bottom: 13631px; height: 696px;"></div>
+        <div class="block block-col-3" style="bottom: 13631px; height: 696px;"></div>
+        <div class="block block-col-1" style="bottom: 14261px; height: 724px;"></div>
+        <div class="block block-col-4" style="bottom: 14261px; height: 717px;"></div>
+        <div class="block block-col-3" style="bottom: 15122px; height: 248px;"></div>
+        <div class="block block-col-2" style="bottom: 15122px; height: 241px;"></div>
+        <div class="block block-col-3" style="bottom: 15458px; height: 248px;"></div>
+        <div class="block block-col-2" style="bottom: 15458px; height: 234px;"></div>
+        <div class="block block-col-1" style="bottom: 15808px; height: 241px;"></div>
+        <div class="block block-col-4" style="bottom: 15808px; height: 248px;"></div>
+        <div class="block block-col-4" style="bottom: 16067px; height: 255px;"></div>
+        <div class="block block-col-1" style="bottom: 16067px; height: 262px;"></div>
+        <div class="block block-col-3" style="bottom: 16494px; height: 255px;"></div>
+        <div class="block block-col-2" style="bottom: 16494px; height: 248px;"></div>
+        <div class="block block-col-3" style="bottom: 16781px; height: 248px;"></div>
+        <div class="block block-col-2" style="bottom: 16781px; height: 241px;"></div>
+        <div class="block block-col-4" style="bottom: 17166px; height: 234px;"></div>
+        <div class="block block-col-1" style="bottom: 17166px; height: 241px;"></div>
+        <div class="block block-col-1" style="bottom: 17439px; height: 241px;"></div>
+        <div class="block block-col-4" style="bottom: 17439px; height: 241px;"></div>
+        <div class="block block-col-3" style="bottom: 17817px; height: 227px;"></div>
+        <div class="block block-col-2" style="bottom: 17817px; height: 234px;"></div>
+        <div class="block block-col-2" style="bottom: 18104px; height: 213px;"></div>
+        <div class="block block-col-3" style="bottom: 18104px; height: 220px;"></div>
+        <div class="block block-col-1" style="bottom: 18454px; height: 241px;"></div>
+        <div class="block block-col-4" style="bottom: 18461px; height: 220px;"></div>
+        <div class="block block-col-1" style="bottom: 18748px; height: 220px;"></div>
+        <div class="block block-col-4" style="bottom: 18748px; height: 220px;"></div>
+        <div class="block block-col-3" style="bottom: 19140px; height: 248px;"></div>
+        <div class="block block-col-2" style="bottom: 19140px; height: 248px;"></div>
+        <div class="block block-col-2" style="bottom: 19455px; height: 206px;"></div>
+        <div class="block block-col-3" style="bottom: 19455px; height: 206px;"></div>
+        <div class="block block-col-1" style="bottom: 19665px; height: 297px;"></div>
+        <div class="block block-col-4" style="bottom: 19672px; height: 283px;"></div>
+        <div class="block block-col-3" style="bottom: 20309px; height: 262px;"></div>
+        <div class="block block-col-2" style="bottom: 20309px; height: 262px;"></div>
+        <div class="block block-col-1" style="bottom: 20568px; height: 248px;"></div>
+        <div class="block block-col-4" style="bottom: 20568px; height: 269px;"></div>
+        <div class="block block-col-1" style="bottom: 21030px; height: 262px;"></div>
+        <div class="block block-col-4" style="bottom: 21037px; height: 255px;"></div>
+        <div class="block block-col-2" style="bottom: 21261px; height: 318px;"></div>
+        <div class="block block-col-3" style="bottom: 21261px; height: 318px;"></div>
+        <div class="block block-col-1" style="bottom: 21681px; height: 717px;"></div>
+        <div class="block block-col-4" style="bottom: 21688px; height: 724px;"></div>
+        <div class="block block-col-3" style="bottom: 22297px; height: 626px;"></div>
+        <div class="block block-col-2" style="bottom: 22304px; height: 605px;"></div>
+        <div class="block block-col-1" style="bottom: 23046px; height: 549px;"></div>
+        <div class="block block-col-4" style="bottom: 23053px; height: 542px;"></div>
+        <div class="block block-col-3" style="bottom: 23627px; height: 535px;"></div>
+        <div class="block block-col-2" style="bottom: 23627px; height: 528px;"></div>
+        <div class="block block-col-1" style="bottom: 24054px; height: 549px;"></div>
+        <div class="block block-col-4" style="bottom: 24054px; height: 535px;"></div>
+        <div class="block block-col-3" style="bottom: 24565px; height: 486px;"></div>
+        <div class="block block-col-2" style="bottom: 24565px; height: 479px;"></div>
+        <div class="block block-col-1" style="bottom: 25027px; height: 346px;"></div>
+        <div class="block block-col-4" style="bottom: 25027px; height: 339px;"></div>
+        <div class="block block-col-2" style="bottom: 25293px; height: 472px;"></div>
+        <div class="block block-col-3" style="bottom: 25293px; height: 479px;"></div>
+        <div class="block block-col-1" style="bottom: 25720px; height: 367px;"></div>
+        <div class="block block-col-4" style="bottom: 25720px; height: 360px;"></div>
+        <div class="block block-col-2" style="bottom: 25993px; height: 423px;"></div>
+        <div class="block block-col-3" style="bottom: 25993px; height: 423px;"></div>
+        <div class="block block-col-4" style="bottom: 26434px; height: 255px;"></div>
+        <div class="block block-col-3" style="bottom: 26581px; height: 283px;"></div>
+        <div class="block block-col-1" style="bottom: 27064px; height: 332px;"></div>
+        <div class="block block-col-2" style="bottom: 27757px; height: 416px;"></div>
+        <div class="block block-col-3" style="bottom: 27764px; height: 416px;"></div>
+        <div class="block block-col-1" style="bottom: 28401px; height: 465px;"></div>
+        <div class="block block-col-4" style="bottom: 28408px; height: 437px;"></div>
+        <div class="block block-col-3" style="bottom: 29052px; height: 514px;"></div>
+        <div class="block block-col-2" style="bottom: 29052px; height: 500px;"></div>
+        <div class="block block-col-4" style="bottom: 29780px; height: 416px;"></div>
+        <div class="block block-col-1" style="bottom: 30417px; height: 717px;"></div>
+        <div class="block block-col-2" style="bottom: 30417px; height: 717px;"></div>
+        <div class="block block-col-3" style="bottom: 31775px; height: 339px;"></div>
+        <div class="block block-col-2" style="bottom: 31775px; height: 332px;"></div>
+        <div class="block block-col-4" style="bottom: 32097px; height: 227px;"></div>
+        <div class="block block-col-1" style="bottom: 32097px; height: 234px;"></div>
+        <div class="block block-col-3" style="bottom: 32230px; height: 227px;"></div>
+        <div class="block block-col-2" style="bottom: 32230px; height: 220px;"></div>
+        <div class="block block-col-4" style="bottom: 32391px; height: 374px;"></div>
+        <div class="block block-col-1" style="bottom: 32391px; height: 381px;"></div>
+        <div class="block block-col-2" style="bottom: 32685px; height: 402px;"></div>
+        <div class="block block-col-3" style="bottom: 32685px; height: 409px;"></div>
+        <div class="block block-col-3" style="bottom: 33175px; height: 318px;"></div>
+        <div class="block block-col-2" style="bottom: 33182px; height: 304px;"></div>
+        <div class="block block-col-4" style="bottom: 33399px; height: 353px;"></div>
+        <div class="block block-col-1" style="bottom: 33798px; height: 353px;"></div>
+        <div class="block block-col-4" style="bottom: 34057px; height: 304px;"></div>
+        <div class="block block-col-2" style="bottom: 34449px; height: 458px;"></div>
+        <div class="block block-col-3" style="bottom: 34449px; height: 458px;"></div>
+        <div class="block block-col-1" style="bottom: 34974px; height: 563px;"></div>
+        <div class="block block-col-4" style="bottom: 34995px; height: 535px;"></div>
+        <div class="block block-col-3" style="bottom: 35800px; height: 801px;"></div>
+        <div class="block block-col-2" style="bottom: 35807px; height: 794px;"></div>
+        <div class="block block-col-3" style="bottom: 37312px; height: 276px;"></div>
+        <div class="block block-col-2" style="bottom: 37312px; height: 262px;"></div>
+        <div class="block block-col-1" style="bottom: 38691px; height: 255px;"></div>
+        <div class="block block-col-4" style="bottom: 38691px; height: 262px;"></div>
+        <div class="block block-col-1" style="bottom: 41589px; height: 1144px;"></div>
+        <div class="block block-col-2" style="bottom: 41589px; height: 1158px;"></div>
+        <div class="block block-col-4" style="bottom: 41603px; height: 1130px;"></div>
+        <div class="block block-col-3" style="bottom: 41603px; height: 1144px;"></div>
     </div>
 
-    <div id="fps" class="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20"></div>
+    <div id="fps"
+        class="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+    </div>
 
     <button type="button" id="play-button"
         class="rounded-full bg-blue-600 p-20 text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
-        <svg class="w-36 h-36" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+        <svg class="w-36 h-36" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+            class="size-6">
             <path fill-rule="evenodd"
                 d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
                 clip-rule="evenodd" />
@@ -42,7 +206,6 @@
         <source src="videos/change.mp4" type="video/mp4">
     </video>
 
-    <!-- <canvas id="canvas"></canvas> -->
 </body>
 
 </html>

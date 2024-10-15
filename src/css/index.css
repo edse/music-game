@@ -73,29 +73,52 @@
     left: 0%;
     top: 50%;
     transform: translate(0%, -50%);
-    height: 0.8vh;
+    height: 3px;
     width: 100vw;
     z-index: 3;
     background-color: red;
 }
 
+#timeline {
+    position: absolute;
+    transform: translate(0, -50%);
+    left: 2vw;
+    top: 5vh;
+    height: 0.5vw;
+    width: 96vw;
+    z-index: 3;
+    background-color: rgb(255, 255, 255);
+}
+
+#playhead {
+    position: absolute;
+    transform: translate(-50%, -35.5%);
+    height: 1.5vw;
+    width: 1.5vw;
+    background-color: rgb(255, 0, 0);
+    border-radius: 100%;
+    z-index: 4;
+}
+
 #map {
     position: absolute;
     left: 0%;
-    top: -900px;
-    height: 900px;
+    top: 0px;
     width: 100vw;
     z-index: 4;
-    /* background-color: rgba(0, 0, 0, 0.2); */
+}
+
+.player-block {
+    background-color:rgba(255, 255, 255, 0.5) !important;
+    border: none !important;
 }
 
 .block {
     position: absolute;
     bottom: 0px;
-    height: 20vh;
+    height: 150px;
     width: 15vw;
     z-index: 4;
-    /* border-radius: 100%; */
     border: 5px dashed white;
     background-color:rgba(0, 0, 0, 0.2);
     padding: 5%;
@@ -126,4 +149,9 @@
     right: 0;
     z-index: 5;
     margin: 5px;
+}
+
+#vwvh {
+    width: 1vw;
+    height: 1vw;
 }
