@@ -43,14 +43,14 @@ function init() {
 
     videoDuration = video.duration;
 
-    var c = window.getComputedStyle(document.getElementById("vwvh"));
+    let c = window.getComputedStyle(document.getElementById("vwvh"));
     vw = Math.round(String(c.width).replace("px", ""));
     vh = Math.round(String(c.height).replace("px", ""));
 
-    var c = window.getComputedStyle(document.getElementById("timeline"));
+    c = window.getComputedStyle(document.getElementById("timeline"));
     timelineWidth = Math.round(String(c.width).replace("px", ""));
 
-    var c = window.getComputedStyle(document.querySelectorAll("#line")[0]);
+    c = window.getComputedStyle(document.querySelectorAll("#line")[0]);
     middleOfScreen = Math.round(String(c.top).replace("px", ""));
 
     var offset = recordedmiddleOfScreen - middleOfScreen;
@@ -68,8 +68,8 @@ function showFps(timestamp) {
 }
 
 function updatePlayhead() {
-    p = (100 * video.currentTime) / videoDuration;
-    x = ((timelineWidth / 100) * p) - (0.75 * vw);
+    let p = (100 * video.currentTime) / videoDuration;
+    let x = ((timelineWidth / 100) * p) - (0.75 * vw);
     document.getElementById("playhead").style.transform = `translate(${x}px, -35%)`;
 }
 
@@ -101,7 +101,7 @@ function pauseVideo() {
 }
 
 function createBlock(col) {
-    var block = document.createElement('div');
+    let block = document.createElement('div');
     block.classList.add("block");
     block.classList.add("player-block");
     block.classList.add(`block-col-${col}`);  
